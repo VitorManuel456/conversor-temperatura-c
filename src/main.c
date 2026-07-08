@@ -64,6 +64,13 @@ int main() {
                 printf("Digite a temperatura em Kelvin: ");
                 scanf("%f", &temperatura);
 
+                if (temperatura < 0) {
+
+                    printf("\nErro: temperaturas em Kelvin nao podem ser negativas.\n");
+                    break;
+
+                }
+
                 resultado = kelvinParaCelsius(temperatura);
 
                 printf("Resultado: %.2f °C\n", resultado);
@@ -72,13 +79,13 @@ int main() {
 
             case 0:
 
-                printf("\nPrograma encerrado.\n");
+                printf("\nObrigado por utilizar o programa!\n");
 
                 break;
 
             default:
 
-                printf("\nOpcao invalida!\n");
+                printf("\nOpcao invalida! Escolha uma opcao entre 0 e 4.\n");
 
         }
 
