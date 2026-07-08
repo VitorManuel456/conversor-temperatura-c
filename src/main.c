@@ -8,6 +8,8 @@ float kelvinParaCelsius(float k);
 int main() {
 
     int opcao;
+    float temperatura;
+    float resultado;
 
     do {
 
@@ -25,17 +27,57 @@ int main() {
         switch(opcao) {
 
             case 1:
+
+                printf("Digite a temperatura em Celsius: ");
+                scanf("%f", &temperatura);
+
+                resultado = celsiusParaFahrenheit(temperatura);
+
+                printf("Resultado: %.2f °F\n", resultado);
+
+                break;
+
             case 2:
+
+                printf("Digite a temperatura em Fahrenheit: ");
+                scanf("%f", &temperatura);
+
+                resultado = fahrenheitParaCelsius(temperatura);
+
+                printf("Resultado: %.2f °C\n", resultado);
+
+                break;
+
             case 3:
+
+                printf("Digite a temperatura em Celsius: ");
+                scanf("%f", &temperatura);
+
+                resultado = celsiusParaKelvin(temperatura);
+
+                printf("Resultado: %.2f K\n", resultado);
+
+                break;
+
             case 4:
-                printf("\nFuncionalidade em desenvolvimento...\n");
+
+                printf("Digite a temperatura em Kelvin: ");
+                scanf("%f", &temperatura);
+
+                resultado = kelvinParaCelsius(temperatura);
+
+                printf("Resultado: %.2f °C\n", resultado);
+
                 break;
 
             case 0:
-                printf("\nEncerrando programa...\n");
+
+                printf("\nPrograma encerrado.\n");
+
                 break;
 
             default:
+
                 printf("\nOpcao invalida!\n");
 
         }
@@ -43,23 +85,20 @@ int main() {
     } while(opcao != 0);
 
     return 0;
-
 }
 
-/* Implementação futura */
-
 float celsiusParaFahrenheit(float c) {
-    return 0;
+    return (c * 9 / 5) + 32;
 }
 
 float fahrenheitParaCelsius(float f) {
-    return 0;
+    return (f - 32) * 5 / 9;
 }
 
 float celsiusParaKelvin(float c) {
-    return 0;
+    return c + 273.15;
 }
 
 float kelvinParaCelsius(float k) {
-    return 0;
+    return k - 273.15;
 }
